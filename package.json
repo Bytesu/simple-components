@@ -1,0 +1,28 @@
+{
+  "name": "simple-components",
+  "version": "1.0.0",
+  "description": "simple components",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bytesu/simple-components.git"
+  },
+  "keywords": [
+    "simple"
+  ],
+  "author": "bytesu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bytesu/simple-components/issues"
+  },
+  "homepage": "https://github.com/Bytesu/simple-components",
+  "dependencies": {
+    "jquery": "^2.1.4"
+  }
+}

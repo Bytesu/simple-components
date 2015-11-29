@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉框组件</title>
+    <style>
+        .simple-select {
+            display: inline-block;
+            position: relative;
+        }
+
+        .simple-select ul li{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            /* width: 40px; */
+            text-align: center;
+            padding: 2px 5px;
+            background: #FFF;
+            cursor: pointer;
+        }
+
+        .simple-select ul li:hover{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            /* width: 40px; */
+            text-align: center;
+            padding: 2px 5px;
+            background: #2dbe60;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+        .simple-select ul li.active{
+            background: #2dbe60;
+            color: #FFF;
+        }
+        .simple-select-shadow{
+            width: 50px;
+            padding: 12px 0;
+            border-radius: 0 0 4px 4px;
+            background-color: #fff;
+            box-sizing: border-box;
+            z-index: 1000;
+            opacity: 0.97;
+            filter: alpha(opacity=97);
+            border: 1px solid rgba(217, 217, 217, 0.4);
+            border-top: 1px solid rgba(217, 217, 217, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), -6px 8px 15px rgba(0, 0, 0, 0.04), 6px 8px 15px rgba(0, 0, 0, 0.04);
+        }
+        .simple-select ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            -webkit-padding-start: 0px;
+            position: absolute;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="simple-select">
+    <div class="simple-select-current">中文</div>
+    <ul class="simple-options simple-select-shadow">
+        <li>中文</li>
+        <li>日文</li>
+        <li>英文</li>
+    </ul>
+</div>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script>
+    $(function () {
+//        $('.')/
+        $('.simple-select-current').click(function(){
+            $('.simple-options').toggle();
+        });
+        $('.simple-options').find('li').click(function(){
+            var self = this;
+            setTimeout(function(){
+                $('.simple-select-current').text($(self).text());
+                $(self).closest('ul').toggle();
+            },100);
+        })
+    });
+</script>
+</body>
+</html>
